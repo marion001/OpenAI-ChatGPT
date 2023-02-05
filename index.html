@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Open AI-ChatGPT Vũ Tuyển</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script language="javascript" src="bootstrap.bundle.min.js"></script>
+    <script src="ChatGPT.js"></script>
+</head>
+<!--Docs: https://platform.openai.com/docs/api-reference/completions/create 
+Code By: Vũ Tuyển
+Mail: tuyenbau1997@gmail.com
+-->
+<body style="background: url(ground.jpg) no-repeat; BodyLoader="BodyLoader()">
+    <center>
+        <h2 style="margin-top: 1px;" class="text-info">Open AI - Chat GPT</h2>
+    </center>
+    <div class="mb-3 row">
+        <div id="idContainer">
+		<center>
+            <textarea id="txtOutput" class="form-control text-primary" rows="10" style="margin-top: 1px; width: 95%; height: 280px;" placeholder="Nội Dung Đoạn Chat:" disabled></textarea></center>
+            <br/><b style="margin-left: 38px;" class="badge bg-primary text-wrap fs-6">Cài Đặt:</b>
+            <b class="text-info">Chọn Ngôn Ngữ Của Bạn:</b>
+            <select id="selLang" onchange="NgonNgu(this)">
+                <option class="text-primary" value="vi-VN">Tiếng Việt</option>
+                <option class="text-success" value="en-US">Tiếng Anh US</option>
+            </select> | <b class="text-info">Kiểu Dữ Liệu Hiển Thị: </b>
+            <select id="selModel">
+                <option class="text-primary" value="text-davinci-003" title="text-davinci-003">Mặc Định (davinci-003)</option>
+                <option class="text-danger" value="text-davinci-002" title="text-davinci-002">Văn Bản (davinci-002)</option>
+                <option class="text-success" value="code-davinci-002" title="code-davinci-002">Code (davinci-002)</option>
+            </select> |
+            <label id="lblSpeak" for="SpkText">
+                <b class="text-info">Bật Mic Để Nói:</b>
+                <input id="SpkText" type="checkbox" onChange="toggleVisibility('imgemployment');" onclick="SpeakKToText()" />
+            </label> <img id="imgemployment" src="./MIC.gif" style="visibility:hidden" />
+            <hr class="text-primary"/>
+            <center>
+                <b><p id="zidText"  class="text-danger text-center"></p></b>
+                <div class="input-group mb-3 w-75">
+                    <span class="badge bg-primary text-wrap fs-6" style="width: 15rem;" id="basic-addon3">Chuyển Giọng Nói Thành Văn Bản:</span>
+                    <textarea title="Nội dung bạn nói ra sẽ được thu âm và tự động được gửi lên CHAT" placeholder="Nội dung bạn nói sẽ hiện ở đây và tự động được đẩy lên khung Chat Box" type="text" class="form-control text-danger" id="idText" aria-describedby="basic-addon3"
+                    style="height:43px;" disabled></textarea>
+                </div>
+                <textarea class="form-control text-success" id="txtMsg" wrap="soft" style="width: 75%; height: 120px; margin-left: 3px; margin-top: 6px" placeholder="Nhập Nội Dung Văn Bản/Tin Nhắn Tại Đây"></textarea>
+                <br/>
+                <button type="button" class="btn btn-primary" onclick="NextData()" id="btnSend">Chat</button>
+            </center>
+        </div>
+    </div>
+    <span class="align-bottom badge  text-wrap fs-6" style="margin-left: 20px;"><a class="text-info" href="https://www.facebook.com/TWFyaW9uMDAx/" target="_bank">Code By: Vũ Tuyển</a></span>
+</body>
+
+</html>
